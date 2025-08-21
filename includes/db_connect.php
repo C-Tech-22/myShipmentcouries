@@ -1,9 +1,14 @@
 <?php
+// Include database connection
+require_once 'includes/db_connect.php';
+
+
+
 // Database configuration
-$db_host = 'localhost';
-$db_name = 'shipment';
-$db_user = 'clever';
-$db_pass = 'clever.ebinum28';
+$db_host = $_ENV['DB_HOST'] ?? 'localhost'; // Use environment variable or default to localhost
+$db_name = $_ENV['DB_NAME'] ?? 'shipment';
+$db_user = $_ENV['DB_USER'] ?? 'clever';
+$db_pass = $_ENV['DB_PASS'] ?? 'clever.ebinum28';
 
 // Create database connection
 try {
